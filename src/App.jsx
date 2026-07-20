@@ -14,7 +14,7 @@ class App extends React.Component {
           img: "K20A.jpg",
           text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
           category: "engine",
-          price: "700.000",
+          price: "700.000₸",
         },
         {
           id: 2,
@@ -22,7 +22,7 @@ class App extends React.Component {
           img: "K24A3.jpg",
           text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
           category: "engine",
-          price: "700.000",
+          price: "700.000₸",
         },
         {
           id: 3,
@@ -30,7 +30,7 @@ class App extends React.Component {
           img: "3S-GTE.jpg",
           text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
           category: "engine",
-          price: "700.000",
+          price: "700.000₸",
         },
         {
           id: 4,
@@ -38,7 +38,7 @@ class App extends React.Component {
           img: "1JZ-GTE.jpg",
           text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
           category: "engine",
-          price: "700.000",
+          price: "700.000₸",
         },
         {
           id: 5,
@@ -46,20 +46,32 @@ class App extends React.Component {
           img: "2JZ-GTE.jpg",
           text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
           category: "engine",
-          price: "700.000",
+          price: "700.000₸",
         },
       ],
+      orders: [],
     };
+    this.addToOrder = this.addToOrder.bind(this);
   }
 
   render() {
     return (
       <div className="wrapper">
-        <Header />
-        <Items items={this.state.items} />
+        <Header orders={this.state.orders} />
+        <Items items={this.state.items} onAdd={this.addToOrder} />
         <Footer />
       </div>
     );
+  }
+
+  addToOrder(item) {
+    let isInArr = false;
+    this.state.orders.forEach((el) => {
+      if (el.id === item.id) isInArr = true;
+    });
+    if (!isInArr) {
+      this.setState({ orders: [...this.state.orders, item] });
+    }
   }
 }
 
