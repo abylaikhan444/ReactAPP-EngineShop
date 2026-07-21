@@ -4,11 +4,16 @@ import { FaBasketShopping } from "react-icons/fa6";
 import Order from "./Order";
 
 const showOrders = (props) => {
+  let priceSum = 0;
+  props.orders.forEach((el) => (priceSum += Number.parseInt(el.price)));
   return (
     <>
       {props.orders.map((el) => (
-        <Order key={el.id} item={el} />
+        <Order onDelete={props.onDelete} key={el.id} item={el} />
       ))}
+      <div className="price-sum">
+        <p>Сумма: {priceSum}₸</p>
+      </div>
     </>
   );
 };

@@ -1,9 +1,3 @@
-
-
 export default function Footer() {
-  return (
-    <footer>
-      All rights reserved 2026 &copy
-    </footer>
-  )
+  return <footer>All rights reserved 2026 &copy</footer>;
 }

@@ -76,12 +76,10 @@ header .shop-cart .item img {
   height: 75px;
   float: left;
   margin-right: 20px;
-    
 }
 header .shop-cart .item h2 {
   font-size: 20px;
   margin-bottom: 10px;
-
 }
 header .shop-cart .item p {
   color: #000000;
@@ -93,7 +91,21 @@ header .shop-cart .item b {
   font-weight: 600;
 }
 
+header .delete-icon {
+  float: right;
+  cursor: pointer;
+  color: #ca5252;
+  transition: transform 0.3s ease-in;
+}
+header .delete-icon:hover {
+  color: #d33232;
+  transform: scale(1.5);
+}
 
+header .price-sum {
+  color: #222;
+  font-weight: 600;
+}
 
 header .presentation {
   margin: 50px auto;
@@ -130,6 +142,48 @@ header .presentation::before {
   font-weight: 300;
 }
 
+.categories {
+  margin-bottom: 30px;
+}
+
+.categories div {
+  display: inline;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 10px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  font-weight: 400;
+}
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+.full-item {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000000cb;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.full-item > div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
 main {
   display: flex;
   width: 100%;
@@ -146,29 +200,35 @@ main .item {
   padding-bottom: 20px;
 }
 
-main .item img {
+main .item img,
+.full-item img {
   width: 100%;
   border-radius: 10px 10px 0 0;
   height: 300px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
   transform: scale(1.01);
 }
 
 main h2,
+.full-item h2,
 main p,
-main b {
+.full-item p main b .full-item b {
   margin: 10px 10px;
   color: #333;
 }
 
-main b {
+main b,
+.full-item b {
   color: #5fa36a;
 }
 
-main .add-to-card {
+main .add-to-card,
+.full-item .add-to-card {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -183,7 +243,8 @@ main .add-to-card {
   font-weight: 600;
   transition: transform 0.5s ease;
 }
-main .add-to-card:hover {
+main .add-to-card:hover,
+.full-item .add-to-card:hover {
   transform: scale(1.2) translateY(-5px);
 }
 
