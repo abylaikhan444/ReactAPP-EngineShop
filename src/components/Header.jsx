@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { FaBasketShopping } from "react-icons/fa6";
 import Order from "./Order";
