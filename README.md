@@ -1,8 +1,8 @@
-# 🏎️ Engine Shop
+# 🏎️ Engine Shop https://react-app-engine-shop.vercel.app/
 
 Интернет-магазин легендарных JDM-двигателей — пет-проект на **React + Vite**.
 
-Каталог включает культовые моторы Honda и Toyota: **K20A**, **K24A3**, **3S-GTE**, **1JZ-GTE**, **2JZ-GTE**.
+Каталог включает культовые моторы Honda и Toyota: **K20A**, **K24A3**, **3S-GTE**, **1JZ-GTE**, **2JZ-GTE**...
 
 ## 🛠️ Технологии
 
